@@ -71,8 +71,9 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   border: 1px solid grey;
 }
 
+/* Set the container height equal to minimun content size */
 .accordion .container.active .content {
-  height: 150px;
+  height: min-content;
 }
 
 /* Changes from arrow down to arrow up - when active */
