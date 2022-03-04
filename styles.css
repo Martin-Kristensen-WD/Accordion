@@ -53,14 +53,13 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   transform: translateY(-50%);
 }
 
-/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+/* Hides the content (height: 0), decreases font size, and adds transition */
 .accordion .content {
   position: relative;
   background: white;
   height: 0;
   font-size: 20px;
-  text-align: justify;
-  width: 780px;
+  width: 720px;
   overflow: hidden;
   transition: 0.5s;
 }
@@ -71,9 +70,11 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   border: 1px solid grey;
 }
 
-/* Set the container height equal to minimun content size */
+/* Set the container height to 300px 
+  Tried to use height: min-content - but that cant be transitioned.. :( 
+*/
 .accordion .container.active .content {
-  height: min-content;
+  height: 300px;
 }
 
 /* Changes from arrow down to arrow up - when active */
