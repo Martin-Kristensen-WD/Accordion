@@ -1,1 +1,91 @@
+/* Simple body styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.accordion-body {
+  margin: 16px;
+}
 
+/* Basic font styles */
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+}
+h2 {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.accordion .container {
+  position: relative;
+  margin: 10px 10px;
+}
+
+/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer for interactiveness*/
+.accordion .label {
+  position: relative;
+  padding: 10px 0;
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+}
+
+/* 
+Add the arrow to the psudo element 
+Positions the down arrow 5px from the right. Centers it using the transform property.
+*/
+.accordion .label::before {
+  content: "\f107";
+  font: normal normal normal 14px/1 FontAwesome;
+  color: black;
+  position: absolute;
+  top: 50%;
+  right: -5px;
+  font-size: 30px;
+  transform: translateY(-50%);
+}
+
+/* Hides the content (height: 0), decreases font size, justifies text and adds transition */
+.accordion .content {
+  position: relative;
+  background: white;
+  height: 0;
+  font-size: 20px;
+  text-align: justify;
+  width: 780px;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.accordion hr {
+  width: 100;
+  margin-left: 0;
+  border: 1px solid grey;
+}
+
+.accordion .container.active .content {
+  height: 150px;
+}
+
+/* Changes from arrow down to arrow up - when active */
+.accordion .container.active .label::before {
+  content: "\f106";
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 30px;
+}
+
+/* Set max-width on the accordion on laptop screens (1080px) */
+@media screen and (min-width: 1080px) {
+  .accordion-body {
+    max-width: 880px;
+    margin: 0 auto;
+  }
+}
