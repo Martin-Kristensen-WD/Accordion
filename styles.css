@@ -36,6 +36,11 @@ button {
   width: 100%;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer for interactiveness*/
 .accordion .label {
   padding: 10px 0;
