@@ -1,12 +1,8 @@
-/* Simple body styles */
+/* Basic styles to HTML tags */
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-.accordion-body {
-  margin: 16px;
-}
 
-/* Basic font styles */
 h1 {
   font-size: 32px;
   line-height: 40px;
@@ -24,16 +20,12 @@ p {
   font-weight: 400;
 }
 
-.accordion .container {
-  position: relative;
-  margin: 10px 10px;
-}
-
 button {
   border: none;
   background: white;
   position: relative;
   width: 100%;
+  cursor: pointer;
 }
 
 ul {
@@ -41,18 +33,22 @@ ul {
   list-style: none;
 }
 
-/* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer for interactiveness*/
+/* Add margin to accordion*/
+.accordion-body {
+  margin: 16px;
+}
+
+/* Adds padding to the top and bottom and increases font size.*/
 .accordion .label {
   padding: 10px 0;
   font-size: 30px;
   color: black;
-  cursor: pointer;
   text-align: left;
 }
 
 /* 
 Add the arrow to the psudo element 
-Positions the down arrow 5px from the right. Centers it using the transform property.
+Positions the down arrow to the right. Centers it vertically using the transform property.
 */
 .accordion .label::before {
   content: "\f107";
@@ -71,22 +67,24 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   background: white;
   height: 0;
   font-size: 20px;
-  width: 720px;
+  max-width: 720px;
   overflow: hidden;
   transition: 0.5s;
 }
 
+/* Style the line divider*/
 .accordion hr {
   width: 100;
   margin-left: 0;
   border: 1px solid grey;
 }
 
-/* Set the container height to 300px 
-  Tried to use height: min-content - but that cant be transitioned.. :( 
+/* 
+Set the content height to 300px 
+Tried to use height: min-content - but that cant be transitioned.. :( Would have been best solution.
 */
 .accordion .container.active .content {
-  height: 300px;
+  height: 570px;
 }
 
 /* Changes from arrow down to arrow up - when active */
@@ -96,10 +94,23 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   font-size: 30px;
 }
 
-/* Set max-width on the accordion on laptop screens (1080px) */
-@media screen and (min-width: 1080px) {
+/********** MEDIA QUERIES **********/
+
+/* Set height on content on bigger screens (large mobile / tablet) (480px) */
+@media screen and (min-width: 480px) {
+  .accordion .container.active .content {
+    height: 400px;
+  }
+}
+
+/* Set max-width on the accordion and height on content on bigger screens (880px) */
+@media screen and (min-width: 880px) {
   .accordion-body {
     max-width: 880px;
     margin: 50px auto;
+  }
+
+  .accordion .container.active .content {
+    height: 300px;
   }
 }
