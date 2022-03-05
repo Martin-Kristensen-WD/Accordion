@@ -1,6 +1,6 @@
 # Accordion
 
-## See online here: https://martin-kristensen-wd.github.io/Accordion/ 
+## See online here: 
 
 ## Built with 
 
