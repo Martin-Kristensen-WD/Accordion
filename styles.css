@@ -29,13 +29,20 @@ p {
   margin: 10px 10px;
 }
 
+button {
+  border: none;
+  background: white;
+  position: relative;
+  width: 100%;
+}
+
 /* Positions the labels relative to the .container. Adds padding to the top and bottom and increases font size. Also makes its cursor a pointer for interactiveness*/
 .accordion .label {
-  position: relative;
   padding: 10px 0;
   font-size: 30px;
   color: black;
   cursor: pointer;
+  text-align: left;
 }
 
 /* 
@@ -48,7 +55,7 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
   color: black;
   position: absolute;
   top: 50%;
-  right: -5px;
+  right: 0;
   font-size: 30px;
   transform: translateY(-50%);
 }
@@ -88,6 +95,6 @@ Positions the down arrow 5px from the right. Centers it using the transform prop
 @media screen and (min-width: 1080px) {
   .accordion-body {
     max-width: 880px;
-    margin: 0 auto;
+    margin: 50px auto;
   }
 }
